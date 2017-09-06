@@ -1,0 +1,25 @@
+.even{
+    background: #ffffff;
+}
+.odd
+{
+    background-color: rgba(0, 124, 186, 0.15);
+
+}
+.hoverRow
+{
+    background-color: rgba(0, 124, 186, 0.37) !important;
+}
+.ui-datatable {
+    background-color: #ddd;
+    border-radius: 0px;
+    height: 41px;
+    cursor: initial;
+}
+
+.selected
+{
+    background-color: #007cba;
+    background-image: initial;
+    color: white;
+}

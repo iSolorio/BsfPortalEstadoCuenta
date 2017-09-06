@@ -1,0 +1,20 @@
+@CHARSET "ISO-8859-1";
+
+.Datos {
+    background-color: #ebebeb !important;
+}
+.titulos {
+    color: #0499ca;
+    font: menu;
+    font-size: 18pt;
+}
+
+.Requerido
+{
+	font:menu;
+	color:#AC182C;
+}
+label
+{
+	font: inherit;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+<!-- Agregar los estilos    -->
+<link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/dataTablesReStyling.css}" rel="stylesheet" />
+<link th:href="@{/css/bootstrap-datepicker.css}" rel="stylesheet" />
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/bootstrap-select.min.css}" rel="stylesheet" />
+<link th:href="@{/css/signature-pad.css}" rel="stylesheet" />
+<link th:href="@{/css/primefaces.css}" rel="stylesheet" />
+<link th:href="@{/css/base.css}" rel="stylesheet" />
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/Wizard.css}" rel="stylesheet" />
+<link th:href="@{/css/PersonasMorales.css}" rel="stylesheet" />
+<link th:href="@{/css/estilos.css}" rel="stylesheet" />
+<link th:href="@{/css/bootstrap-select.min.css}" rel="stylesheet" />
+<link th:href="@{/css/select2.min.css}" rel="stylesheet" />
+<link th:href="@{/css/estilos.css}" rel="stylesheet" />
+<!-- Agregar los scriptss   -->
+<script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<script th:inline="javascript">
+<!--Asi se popnen variables var cboRazonAlta = [[${Model.cboRazonAlta}]];-->
+	
+</script>
+
+<script th:src="@{/js/Validaciones.js}"></script>
+<script th:src="@{/js/datatablesPlugins/jquery.dataTables.js}"></script>
+<script th:src="@{/js/datatablesPlugins/buttons.html5.min.js}"></script>
+<script th:src="@{/js/datatablesPlugins/buttons.print.min.js}"></script>
+<script th:src="@{/js/datatablesPlugins/dataTables.bootstrap.min.js}"></script>
+<script th:src="@{/js/datatablesPlugins/dataTables.buttons.min.js}"></script>
+s
+<script th:src="@{/js/DatoGenerales.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/bootbox.min.js}"></script>
+<script th:src="@{/js/jquery.inputmask.bundle.js}"></script>
+<script th:src="@{/js/bootstrap-select.js}"></script>
+<script th:src="@{/js/bootstrap-datepicker.js}"></script>
+<script th:src="@{/js/utilidades.js}"></script>
+<script th:src="@{/js/select2.min.js}"></script>
+
+<title>Estado De Cuenta</title>
+</head>
+<body style="background: #F1F1F1;">
+	<div class="container_48">
+		<div class="contenedor">
+			<div class="contenedor-form">
+				<div class="titulo centrar-objeto btn-inline-set">
+					<button id="breadcum" name="breadcum"
+						class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btnMenuGlobal">
+						<span class="ui-button-icon-left ui-icon ui-c ui-icon-arrow-1-w"></span>
+						<span class="ui-button-text ui-c">ui-button</span>
+					</button>
+					<h1>
+						<label class="titulo h1" id="lblTitulo">Estado de Cuenta</label>
+					</h1>
+				</div>
+			</div>
+		</div>
+		<!-- <form id="RelojChecador" th:object="${Model}" method="POST" action="./Carnet">-->
+
+		<div class="row">
+
+			<form class="" id="frmDatosGenerales" method="POST"
+				th:object="${Model}" action="">
+				<div class="contenedor-campos">
+					<label class="Requerido">* Campos Obligatorios</label>
+					<div id="DatosGenerales" class="Datos">
+						<label class="titulos">Datos Generales</label>
+						<div id="DivDatosGenerales">
+							<div
+								style="width: 20%; margin: 0; float: right; display: inline;">
+								<button onclick="GetLocalidad()" type="button" id="btnBuscar"
+									class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left btn-consultar"
+									role="button" aria-disabled="true">
+									<span class="ui-button-icon-left ui-icon ui-c fa fa-search"></span>
+									<span class="ui-button-text ui-c">Buscar</span>
+								</button>
+							</div>
+							<br></br> <br></br>
+
+							<div style="width: 20%; margin: 0; float: left; display: inline;">
+								<label>Id Interno</label>
+							</div>
+							<div style="width: 20%; margin: 0; float: left; display: inline;">
+								<label>Razon</label>
+							</div>
+							<div style="width: 20%; margin: 0; float: left; display: inline;">
+								<label>Referencia</label>
+							</div>
+							<br></br>
+							<div style="width: 20%; margin: 0; float: left; display: inline;"
+								class="Requeridos">
+								<input th:field="*{idInternoPe}" type="text"
+									class="form-control Numeros"
+									style="width: 70%; text-transform: uppercase;" maxlength="90" />
+							</div>
+
+							<div style="width: 20%; margin: 0; float: left; display: inline;">
+								<input th:field="*{razon}" type="text"
+									class="form-control Numeros"
+									style="width: 70%; text-transform: uppercase;" maxlength="10" />
+							</div>
+							<div style="width: 20%; margin: 0; float: left; display: inline;">
+								<input th:field="*{referencia}" type="text"
+									class="form-control Numeros"
+									style="width: 70%; text-transform: uppercase;" maxlength="90" />
+							</div>
+							<br></br> <br></br> <br></br>
+							<div style="width: 20%; margin: 0; float: left; display: inline;">
+								<label>Nombre</label>
+							</div>
+
+							<div style="width: 20%; margin: 0; float: left; display: inline;">
+								<label>Apellido Paterno</label>
+							</div>
+
+
+							<div style="width: 20%; margin: 0; float: left; display: inline;">
+								<label>Apellido Materno</label>
+							</div>
+
+							<br></br>
+							<div style="width: 20%; margin: 0; float: left; display: inline;"
+								class="Requeridos">
+								<input th:field="*{nombre}" type="text"
+									class="form-control RFCMoral"
+									style="width: 70%; text-transform: uppercase; display: initial;"
+									maxlength="90" />
+
+							</div>
+
+							<div style="width: 20%; margin: 0; float: left; display: inline;"
+								class="Requeridos">
+								<input th:field="*{apePa}" type="text"
+									class="form-control RFCMoral"
+									style="width: 70%; text-transform: uppercase; display: initial;"
+									maxlength="90" />
+							</div>
+							<div style="width: 20%; margin: 0; float: left; display: inline;"
+								class="Requeridos">
+								<input th:field="*{apeMa}" type="text"
+									class="form-control RFCMoral"
+									style="width: 70%; text-transform: uppercase; display: initial;"
+									maxlength="90" />
+							</div>
+							<br></br>
+
+							
+								<div class="text-center" style="width: 100%; margin: 0; float: left; display: inline;" id="cliente">
+								</div>
+							
+							<br></br>
+
+							<div id="tabla" style="display: table; margin: 0 auto;">
+							</div>
+
+						</div>
+						<br />
+					</div>
+				</div>
+
+				<ul class="list-inline pull-left ">
+					<li>
+						<button id="breadcumCancel" type="button"
+							class="btn btn-default divStep1 btnMenuGlobal"
+							style="width: 150px; background-color: #ebebeb !important">Salir
+						</button>
+					</li>
+				</ul>
+
+				<input type="text" class="form-control hidden"
+					th:field="*{BsfOperador}" />
+
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

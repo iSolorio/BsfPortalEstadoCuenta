@@ -1,0 +1,648 @@
+
+.lineal{
+display: -webkit-inline-box !important;
+}
+.negritas{
+	font-weight: bold;
+}
+.wizard {
+	margin: 20px auto;
+	
+}
+
+.wizard .nav-tabs {
+	position: relative;
+/* 	margin: 40px auto; */
+	margin-bottom: 0;
+	border-bottom-color: #D8D8D8;
+}
+
+.wizard>div.wizard-inner {
+	position: relative;
+}
+
+.connecting-line {
+	height: 2px;
+	background: #e0e0e0;
+	position: absolute;
+	width: 80%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 50%;
+	z-index: 1;
+}
+.tab-content{
+	background-color:#F2F2F2;
+	-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+
+}
+.wizard .nav-tabs>li.active>a, .wizard .nav-tabs>li.active>a:hover,
+	.wizard .nav-tabs>li.active>a:focus {
+	color: #fff;
+	cursor: default;
+	border: 0;
+	border-bottom-color: transparent;
+	background-color:transparent;
+}
+
+span.round-tab {
+	width: 120px;
+	height: 120px;
+	line-height: 20px;
+	display: inline-block;
+	border-radius: 100px;
+	background: #b6b6b6;
+	border: 2px solid #e0e0e0;
+	z-index: 2;
+	position: absolute;
+	left: 0;
+	text-align: center;
+	font-size: 15px;
+}
+
+span.round-tab i {
+	color: #fff;
+}
+
+.wizard li.active span.round-tab {
+	background: #0684c8;
+	border: 2px solid #0684c8;
+}
+
+.wizard li.active span.round-tab i {
+	color: #fff;
+}
+
+span.round-tab:hover {
+	background: #0684c8;
+	color: #333;
+	border: 2px solid #0684c8;
+}
+
+.wizard .nav-tabs>li {
+	width: 20%;
+}
+
+.wizard li:after {
+	content: " ";
+	position: absolute;
+	left: 46%;
+	opacity: 0;
+	margin: 0 auto;
+	bottom: 0px;
+	border: 5px solid transparent;
+	border-bottom-color: #5bc0de;
+	transition: 0.1s ease-in-out;
+}
+
+.wizard li.active:after {
+	content: " ";
+	position: absolute;
+	left: 46%;
+	opacity: 1;
+	margin: 0 auto;
+	bottom: 0px;
+	border: 10px solid transparent;
+	border-bottom-color: #5bc0de;
+}
+
+.wizard .nav-tabs>li a {
+	width: 70px;
+	height: 70px;
+	margin: 20px auto;
+	border-radius: 100%;
+	padding: 0;
+}
+
+.wizard .nav-tabs>li a:hover {
+	background: transparent;
+}
+
+.wizard .tab-pane {
+	position: relative;
+	margin-top:3.5%;
+}
+
+.wizard h3 {
+	margin-top: 0;
+}
+.wizard-inner{
+	
+	margin-left: 25%;
+}
+
+
+
+@media ( max-width : 1207px ) {
+	.wizard-inner{
+	margin-left: 25%;
+	}
+	.wizard .nav-tabs>li {
+	width: 25%;
+}
+		.wizard .tab-pane {
+	margin-top:5%;
+}
+}
+@media ( max-width : 585px ) {
+	.wizard {
+		width: 90%;
+		height: auto !important;
+	}
+	.wizard-inner{
+	margin-left: 5%;
+	}
+	span.round-tab {
+		width: 100px;
+		height: 100px;
+		line-height: 15px;
+		font-size: 15px;
+	}
+	.wizard .nav-tabs>li {
+	width: 30%;
+}
+	
+	.wizard .nav-tabs>li a {
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+	}
+	.wizard li.active:after {
+		content: " ";
+		position: absolute;
+		left: 35%;
+	}
+	.wizard .tab-pane {
+	margin-top:10%;
+}
+}
+
+/*form datos personales*/
+
+/* .empty{ */
+	
+/* 	border: 1px solid #ff0000 */
+/* } */
+
+/* #datosPersonales{ */
+/*  width:100%; */
+/*   height: 350px; */
+/*   margin-left: 1%;	 */
+/*   position: relative; */
+/*   background-color:#D5D5D5; */
+ 
+/* } */
+/* #domicilio{ */
+/* 	width: 100%; */
+/*   height: auto !important; */
+/*   margin-left: 1%;	 */
+/*   float:left; */
+/*   position: relative; */
+/*     background-color:#D5D5D5; */
+  
+/* } */
+
+/* #otrosDatos{ */
+/* 	width: 100%; */
+/*   height: auto !important; */
+/*   margin-left: 1%;	 */
+/*   float:left; */
+/*   position: relative; */
+/*     background-color:#D5D5D5; */
+  
+/* } */
+
+
+
+/* #lugarNacOcupa{ */
+/* 	width: 90%; */
+/*   height: auto !important; */
+/*   margin-left: 5%;	 */
+/*   position: relative; */
+/* } */
+
+
+/* #trataField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 2%; */
+/* } */
+
+
+
+/* #nombreField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 2%; */
+	
+/* } */
+
+
+/* #apepatField{ */
+	
+/* 	float:left; */
+/* 	margin-left:12%; */
+/* } */
+
+
+/* #apematField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 10%; */
+/* } */
+
+/* #idExtField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 11.7%; */
+/* } */
+
+/* #RFCField{ */
+	
+/* 	float:left; */
+
+/* 		margin-left: 2%; */
+/* width: 150px;	 */
+/* } */
+/* #CURPField{ */
+/* float:left; */
+
+/* 		margin-left: 17.2%; */
+/* width: 150px;	 */
+/* } */
+/* #sexoField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 2%; */
+	
+/* } */
+/* #sexoAlta{ */
+/* 	margin-left: 66%; */
+	
+/* width: 150px;		 */
+	
+/* } */
+/* .PaisNacAlta{ */
+	
+/* 		 border: 0px; */
+/*     width: 30px; */
+/*     height: 1.5em; */
+/* } */
+/* #PaisNacField{ */
+		
+/* 	float:left; */
+/* 	margin-left: 2%; */
+/* 	width: 150px; */
+	
+/* } */
+
+/* .PaisRecAlta{ */
+	
+/* 		 border: 0px; */
+/*     width: 30px; */
+/*     height: 1.5em; */
+/* } */
+/* #PaisRecField{ */
+		
+/* 	float:left; */
+/* 	margin-left: 2%; */
+/* 		width: 150px; */
+	
+/* } */
+
+/* .estadoCivilAlta{ */
+/* 	margin-left: 32% !important; */
+/* width: 150px; */
+/* } */
+/* #estadoCivilField{ */
+/* 	float:left; */
+
+/* 		margin-left: 13.7%; */
+/* width: 150px;	 */
+/* } */
+
+
+/* .lugarNacFieldAlta{ */
+	
+/* width: 150px; */
+/* } */
+/* #lugarNacField{ */
+/* 	float:left; */
+
+/* 		margin-left: 3.6%; */
+/* width: 150px;	 */
+/* } */
+
+
+
+/* .razonAlta{ */
+/* 	border: 0px; */
+/*     width: 420px !important; */
+/*     height: 1.5em; */
+/* } */
+/* #razonAltaField{ */
+/* 	float:left; */
+/* 		margin-left: 2%; */
+/* 	width: 420px !important; */
+/* } */
+
+
+/* #fechaNacField{ */
+	
+	
+/* 	float:left; */
+/* 	margin-left: 2%; */
+/* } */
+/* #fechaNacAlta{ */
+/* 	margin-left: 5%; */
+/* 		width: 150px; */
+	
+/* } */
+/* #numeroField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 2%; */
+/* } */
+/* #RFCAlta{ */
+/* 	margin-left: 90%; */
+	
+/* width: 150px;	 */
+	
+/* } */
+/* #CURPAlta{ */
+/* 	margin-left: 92%; */
+	
+/* width: 150px;	 */
+	
+/* } */
+/* #idExtAlta{ */
+/* 	width: 150px; */
+/* 	margin-left: 31%; */
+/* } */
+/* #tratamientoAlta{ */
+	
+/* 	width: 150px; */
+	
+/* } */
+
+/* #nombreAlta{ */
+/* 	width: 150px; */
+/* 	margin-left: 51%; */
+	
+/* } */
+/* #apepatAlta{ */
+/* 		margin-left: 21%; */
+	
+/* width: 150px;	 */
+/* } */
+/* #apematAlta{ */
+/* 		margin-left: 20%; */
+	
+/* width: 150px;	 */
+	
+/* } */
+/* #emailAlta{ */
+/* 		margin-left: 63%; */
+	
+/* width: 150px;	 */
+	
+/* } */
+/* #emailField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 21%; */
+/* } */
+
+
+
+/* #numeroIdentAlta{ */
+/* 		margin-left: 57.5%; */
+	
+/* width: 150px;	 */
+	
+/* } */
+/* #numeroIdentField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 12%; */
+/* } */
+
+
+/* #telefonoAlta{ */
+/* 	width: 150px; */
+/* 	margin-left: 50%; */
+	
+/* } */
+/* #telefonoField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 2%; */
+	
+/* } */
+/* #codPostalAlta{ */
+/* 	width: 150px; */
+/* 	margin-left: 34.7%; */
+	
+/* } */
+/* #codPostalField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 2%; */
+	
+/* } */
+
+/* #calleAlta{ */
+/* 	margin-left: 59%; */
+	
+/* width: 150px;	 */
+	
+/* } */
+/* #calleField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 10%; */
+	
+/* } */
+/* #numExtAlta{ */
+/* 	width: 150px; */
+/* 	margin-left: 58%; */
+	
+/* } */
+/* #numExtField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 14.7%; */
+	
+/* } */
+
+
+
+/* #NumIntAlta{ */
+/* 	width: 150px; */
+/* 	margin-left: 60.7%; */
+	
+/* } */
+/* #NumIntField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 2%; */
+	
+/* } */
+/* #coloniaAlta{ */
+/* 	margin-left: 45%; */
+	
+/* width: 150px;	 */
+	
+/* } */
+/* #coloniaField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 13.7%; */
+	
+/* } */
+/* #compDomAlta{ */
+/* 	width: 150px; */
+	
+/* } */
+/* #compDomField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 13%; */
+	
+/* } */
+
+
+
+/* #tel2Alta{ */
+/* 	width: 150px; */
+/* 	margin-left:16.7%; */
+	
+/* } */
+/* #tel2Field{ */
+	
+/* 	float:left; */
+/* 	margin-left: 2%; */
+	
+/* } */
+/* #faxAlta{ */
+/* 	margin-left: 73.5%; */
+	
+/* width: 150px;	 */
+	
+/* } */
+/* #faxField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 6.3%; */
+	
+/* } */
+/* #numCelAlta{ */
+/* 	width: 150px; */
+/* 	margin-left: 30%; */
+/* } */
+/* #numCelField{ */
+	
+/* 	float:left; */
+/* 	margin-left:16.2%; */
+	
+/* } */
+
+
+/* #actiGiroAlta{ */
+/* 	width: 150px; */
+/* 	margin-left:2.7%; */
+	
+/* } */
+/* #actiGiroField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 2%; */
+	
+/* } */
+
+/* #ocupaAlta{ */
+	
+/* width: 150px;	 */
+	
+/* } */
+/* #ocupaField{ */
+	
+/* 	float:left; */
+/* 	margin-left: 2.5%; */
+	
+/* } */
+
+/* input{ */
+/* 	border-radius: 5px;  */
+/* -moz-border-radius: 5px;  */
+/* -webkit-border-radius: 5px;  */
+/* border: 1px solid #aaaaff; */
+/* } */
+/* select{ */
+/* 	border-radius: 5px;  */
+/* -moz-border-radius: 5px;  */
+/* -webkit-border-radius: 5px;  */
+/* border: 1px solid #aaaaff; */
+/* } */
+
+
+
+
+/* Latest compiled and minified CSS included as External Resource*/
+
+/* Optional theme */
+@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css');
+
+
+.image-container{
+    display:table;
+    height: 100%;
+    text-align:center;
+}
+
+.inner-container{
+    display:table-cell;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    vertical-align: middle;
+}
+
+.inner-container img{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.nav-btn{
+    font-size:50px;
+    font-weight:700;
+    font-family: monospace;
+    color: #000;
+    cursor:pointer;
+}
+
+.nav-btn:hover{
+    color: #B6B6B6;
+}
+
+.prev-btn{
+    position: relative;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.next-btn{
+    position: relative;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}

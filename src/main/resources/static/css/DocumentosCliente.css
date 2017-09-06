@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+.botonimagenAgregar{
+	background-color: transparent;
+	border: none;
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 30px;
+	background-position: center;
+	border: none;
+	background-image: url("../img/add.png");
+	display:inline-block;
+	background-size: cover;
+	vertical-align:sub;
+}
+.ContenedorDatos{
+	padding: 20px;
+    background-color: #EEE;
+    border-radius: 3px;
+    border: solid 1px #CCC;
+    margin: 0px;
+}
+.transparente{
+	background: transparent;
+    border: transparent;
+    cursor:pointer;
+    color:#777;
+}

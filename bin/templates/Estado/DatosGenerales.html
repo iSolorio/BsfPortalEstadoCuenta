@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+<!-- Agregar los estilos    -->
+	<link th:href="@{/css/bootstrap-datepicker.css}" rel="stylesheet" />
+	<link th:href="@{/css/bootstrap-select.min.css}" rel="stylesheet"/>
+	<link th:href="@{/css/signature-pad.css}" rel="stylesheet"/>
+	<link th:href="@{/css/primefaces.css}" rel="stylesheet" />
+	<link th:href="@{/css/base.css}" rel="stylesheet" />
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+	<link th:href="@{/css/Wizard.css}" rel="stylesheet" />
+	<link th:href="@{/css/PersonasMorales.css}" rel="stylesheet" />
+	<link th:href="@{/css/estilos.css}" rel="stylesheet" />
+	<link th:href="@{/css/bootstrap-select.min.css}" rel="stylesheet"/>
+	<link th:href="@{/css/select2.min.css}" rel="stylesheet"/>
+<!-- Agregar los scriptss   -->
+	<script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+	<script th:inline="javascript">
+		var cboRazonAlta = [[${Model.cboRazonAlta}]];
+		var cboTipoIdentificacion = [[${Model.cboTipoIdentificacion}]];
+
+		var cboEstructuraLegal = [[${Model.cboEstructuraLegal}]];
+		var cboCNAE = [[${Model.cboCNAE}]];
+		var cboAmbito = [[${Model.cboAmbito}]];
+		var cboSituacionEconomica = [[${Model.cboSituacionEconomica}]];
+		var cboRegimenOcupacion = [[${Model.cboRegimenOcupacion}]];
+		var cboTipoCalle = [[${Model.cboTipoCalle}]];
+		var cboComprobanteDomicilio = [[${Model.cboComprobanteDomicilio}]];
+		var cboPaisResidencia = [[${Model.cboPaisResidencia}]];
+		var TxtPaisResidencia = [[${Model.TxtPaisResidencia}]];
+	</script>
+
+	<script th:src="@{/js/Validaciones.js}"></script>
+	<script th:src="@{/js/DatoGenerales.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/bootbox.min.js}"></script>
+	<script th:src="@{/js/jquery.inputmask.bundle.js}"></script>
+	<script th:src="@{/js/bootstrap-select.js}"></script>
+	<script th:src="@{/js/bootstrap-datepicker.js}"></script>
+	<script th:src="@{/js/utilidades.js}"></script>
+	<script th:src="@{/js/select2.min.js}"></script>
+
+	<title>Alta Persona Moral</title>
+</head>
+<body style="background: #F1F1F1;">
+	<div class="container_48">
+		<div class="contenedor">
+			<div class="contenedor-form">
+				<div class="titulo centrar-objeto btn-inline-set">
+					<button id="breadcum" name="breadcum"
+						class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btnMenuGlobal">
+						<span class="ui-button-icon-left ui-icon ui-c ui-icon-arrow-1-w"></span>
+						<span class="ui-button-text ui-c">ui-button</span>
+					</button>
+					<h1>
+						<label class="titulo h1" id="lblTitulo">Estado de Cuenta</label>
+					</h1>
+				</div>
+			</div>
+		</div>
+		<table style="width: 70%;margin-left: 20%">
+			<tr>
+				<td>
+					<button id="btnGenerales" class="round-tab active" type="button">Datos Genarales</button>
+				</td>
+				<td>
+					<button id="btnConstitucion" onclick="ValidarCampos('./DatosConstitucionGenerales');" class="round-tab" type="button">Datos de
+						constituci&oacute;n</button>
+				</td>
+				<td>
+					<button id="btnRelacion" onclick="ValidarCampos('./RelacionPersonaGenerales');" class="round-tab" type="button">Relacionar
+						personas</button>
+				</td>
+				<td>
+					<button id="btnCedula" onclick="ValidarCampos('./CedulaGenerales');" class="round-tab" type="button">C&eacute;dula de
+						Conocimiento del Cliente</button>
+				</td>
+				<td>
+					<button id="btnDocumentos" onclick="ValidarCampos('./DatosConstitucion');" class="round-tab" type="button">Documentos</button>
+				</td>
+			</tr>
+		</table>
+
+		<br /> <br />
+		<!-- <form id="RelojChecador" th:object="${Model}" method="POST" action="./Carnet">-->
+		<div class="row">
+			<form class="" id="frmDatosGenerales" method="POST" th:object="${Model}" action="">
+				<div class="contenedor-campos">
+					<label class="Requerido">* Campos Obligatorios</label>
+					<div id="DatosGenerales" class="Datos">
+						<label class="titulos">Datos Generales</label>
+						<div id="DivDatosGenerales">
+							<table style="width: 100%">
+								<tr>
+									<td>
+										<table style="width: 100%">
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 80%">
+													<label>Id Interno</label>
+													<label class="Requerido">*</label>
+
+												</td>
+												<td>
+													<label>Raz&oacute;n de Alta</label>
+													<label class="Requerido">*</label>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 80%">
+													<div class="Requeridos">
+														<input th:field="*{txtRazonSocial}" type="text" class="form-control Numeros" style="width:30%;text-transform:uppercase;display: no; " maxlength="90"/>
+													</div>
+												</td>
+												<td>
+													<div class=" Requeridos">
+														<select th:field="*{cboRazonAlta}" class="form-control" style="width:90%"></select>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table style="width: 100%">
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 20%">
+													<label>Tipo Identificaci&oacute;n</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 15%">
+													<label>Identificador Externo</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 15%">
+													<label>RFC</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 20%">
+													<label>Pa&iacute;s de Residencia</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 20%">
+													<label>Sector</label>
+													<label class="Requerido">*</label>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 20%">
+													<div class=" Requeridos">
+														<input th:field="*{txtTipoIdentificacion}" type="text" class="form-control hidden" maxlength="14" style="width:90%"/>
+
+														<select th:field="*{cboTipoIdentificacion}" class="form-control" style="width:90%"></select>
+													</div>
+												</td>
+												<td style="width: 15%">
+													<div class=" Requeridos">
+														<input th:field="*{txtIdentificadorExterno}" type="text" class="form-control Numeros" maxlength="14" style="width:90%"/>
+													</div>
+												</td>
+												<td style="width: 15%">
+													<div class=" Requeridos">
+														<input th:field="*{txtRFC}" type="text" class="form-control RFCMoral" style="width:90%" />
+													</div>
+												</td>
+												<td style="width: 20%">
+													<div class="Requeridos">
+														<input th:field="*{TxtPaisResidencia}" class="hidden"  type="text" name="Sector" value="1"/>
+														<select th:field="*{cboPaisResidencia}" class="form-control" style="width:90%"></select>
+													</div>
+												</td>
+												<td style="width: 20%">
+													<div class=" Requeridos" style="display: inline;">
+														<input th:field="*{chkSector}"  type="radio" name="Sector" value="2" id="chkSecPrivad" />
+														<label class="control-label" for="chkSecPrivad">Privado</label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<input th:field="*{chkSector}" type="radio" name="Sector"  value="1" id="chkSecPub" />
+														<label class="control-label" for="chkSecPub">P&uacute;blico</label>
+													</div>
+
+												</td>
+											</tr>
+
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td colspan="2">
+													<label>Estructura legal</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td colspan="3">
+													<label>CNAE</label>
+													<label class="Requerido">*</label>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td colspan="2">
+													<div class=" Requeridos">
+														<select th:field="*{cboEstructuraLegal}" class="form-control" style="width:90%"></select>
+													</div>
+												</td>
+												<td colspan="3">
+													<div class=" Requeridos">
+														<select th:field="*{cboCNAE}" class="form-control" style="width:80%"></select>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table style="width: 100%">
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 30%">
+													<label>Disponibilidad burs&aacute;til</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 70%">
+													<label>&Aacute;mbito</label>
+													<label class="Requerido">*</label>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 30%">
+													<div class=" Requeridos">
+														<input th:field="*{chkDisponibilidadBursatil}" type="radio" name="Bursatil" value="D"  id="Burs_d" />
+														<label class="control-label" for="Burs_d" >Desconocido</label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<input th:field="*{chkDisponibilidadBursatil}" type="radio" name="Bursatil" value="C"  id="Burs_c" />
+														<label class="control-label" for="Burs_c" >Cotiza</label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<input th:field="*{chkDisponibilidadBursatil}" type="radio" name="Bursatil"  value="S"  id="Burs_s" />
+														<label class="control-label" for="Burs_s">No Cotiza</label>
+													</div>
+												</td>
+												<td style="width: 70%">
+													<div class=" Requeridos">
+														<select th:field="*{cboAmbito}" class="form-control" style="width:40%;display: inline !important;" ></select>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<input th:field="*{chkImportador}"  type="checkbox" name="gender" value="1" id="ckkImport" />
+														<label for="ckkImport">Importador</label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<label></label>
+														<input th:field="*{chkExportador}" type="checkbox" name="gender" value="2" id="ckkExport" />
+														<label for="ckkExport">Exportador</label>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td>
+													<label>Situaci&oacute;n Econ&oacute;mica</label>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td>
+													<select th:field="*{cboSituacionEconomica}" class="form-control" style="width:70%;" ></select>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							<br/>
+						</div>
+					</div>
+					<br/>
+					<div id="Domicilio" class="Datos">
+						<label class="titulos">Domicilio</label>
+						<div id="DivDomicilio">
+							<table style="width: 100%">
+								<tr>
+									<td>
+										<table style="width: 100%">
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 35%" class="hidden">
+													<label>Comprobante de domicilio</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 25%" class="hidden">
+													<label>Descripci&oacute;n</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 25%">
+													<label>R&eacute;gimen de Ocupaci&oacute;n</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 15%">
+													<label>Tel&eacute;fono</label>
+													<label class="Requerido">*</label>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 35%" class="hidden">
+													<div >
+														<select th:field="*{cboComprobanteDomicilio}" class="form-control" style="width:90%;" ></select>
+													</div>
+												</td>
+												<td style="width: 25%" class="hidden">
+													<div>
+														<input th:field="*{txtDescripcion}" type="text" class="form-control AlfaNumerico" maxlength="50" style="width:90%"  />
+													</div>
+												</td>
+												<td style="width: 25%">
+													<div class=" Requeridos">
+														<select th:field="*{cboRegimenOcupacion}" class="form-control" style="width:90%;" ></select>
+													</div>
+												</td>
+												<td style="width: 15%">
+													<div class=" Requeridos">
+														<input th:field="*{txtTelefono}" type="text" class="form-control Numeros" maxlength="10" style="width:90%"/>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table style="width: 100%">
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width:8%">
+													<label style="display: inline !important;">C&oacute;digo<br/>Postal</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width:48%">
+													<label>Municipio/Localidad/Delegaci&oacute;n</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width:25%">
+													<label>Estado</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width:29%">
+													<label>Pa&iacute;s</label>
+													<label class="Requerido">*</label>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width:8%">
+													<div class=" Requeridos">
+														<input th:field="*{txtCodigoPostal}" type="text" class="form-control Numeros" maxlength="5" style="width:90%"/>
+													</div>
+												</td>
+												<td style="width:48%">
+													<div class=" Requeridos">
+														<input th:field="*{txtMunicipio}" type="text" class="form-control AlfaNumerico" maxlength="35" style="width:90%" readonly="readonly"/>
+													</div>
+												</td>
+												<td style="width:25%">
+													<div class=" Requeridos">
+														<input th:field="*{txtEstado}" type="text" class="form-control" style="width:90%" readonly="readonly"/>
+													</div>
+												</td>
+												<td style="width:29%">
+													<div class=" Requeridos">
+														<input th:field="*{txtPais}" type="text" class="form-control" style="width:90%" readonly="readonly"/>
+
+													</div>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table style="width: 100%">
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 15%">
+													<label>Tipo de Calle</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 58%">
+													<label> Calle</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 7%">
+													<label>Num<br/>Exterior</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 7%">
+													<label>Num<br/>Interior</label>
+												</td>
+												<td style="width: 7%">
+													<label>Dpto.</label>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 15%">
+													<div class=" Requeridos">
+														<select th:field="*{cboTipoCalle}" class="form-control" style="width:90%;" ></select>
+													</div>
+												</td>
+												<td style="width: 58%">
+													<div class=" Requeridos">
+														<input th:field="*{txtCalle}" type="text" class="form-control AlfaNumerico" maxlength="45" style="width:95%"/>
+													</div>
+												</td>
+												<td style="width: 7%">
+													<div class=" Requeridos">
+														<input th:field="*{txtNumExterior}" type="text" class="form-control AlfaNumerico" maxlength="4" style="width:90%"/>
+													</div>
+												</td>
+												<td style="width: 7%">
+													<div class="">
+														<input th:field="*{txtNumInterior}" type="text" class="form-control AlfaNumerico" maxlength="2" style="width:90%"/>
+													</div>
+												</td>
+												<td style="width: 7%">
+													<div class="">
+														<input th:field="*{numeroDepartamento}" type="text" class="form-control AlfaNumerico" maxlength="3" style="width:90%"/>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table style="width: 100%">
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 50%">
+													<label>Colonia</label>
+													<label class="Requerido">*</label>
+												</td>
+												<td style="width: 50%">
+													<label>Otros Datos</label>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 1%">&nbsp;</td>
+												<td style="width: 50%">
+													<div class=" Requeridos">
+														<input th:field="*{txtColonia}" type="text" class="form-control AlfaNumerico" maxlength="100" style="width:95%"/>
+													</div>
+												</td>
+												<td style="width: 50%">
+													<input th:field="*{txtOtrosDatos}" type="text" class="form-control AlfaNumerico" maxlength="100" style="width:95%"/>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							<br/>
+						</div>
+					</div>
+					<div class="next-btn nav-btn" style="position: absolute;top: 50%;left: 98%">
+						<div>
+							<button onclick="ValidarCampos('./DatosConstitucionGenerales');" type="button" id="next1" class="next-step botonimagen"></button>
+						</div>
+					</div>
+				</div>
+				<br/>
+				<ul class="list-inline pull-left ">
+					<li>
+						<button id="breadcumCancel" type="button" class="btn btn-default divStep1 btnMenuGlobal" style="width: 150px;background-color: #ebebeb !important">Salir
+						</button>
+					</li>
+				</ul>
+				<input th:field="*{txtPasoActual}" type="text" class="hidden"/>
+				<input type="text" class="form-control hidden" th:field="*{BsfOperador}"/>
+				<input th:field="*{ModeloMaestro}" type="text" class="hidden"/>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>

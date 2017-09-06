@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Prueba POST</title>
+<th:block th:include="/fragments/head :: head"></th:block>
+<script th:inline="javascript">
+    $(document)
+	    .ready(
+		    function() {
+			$("#BSFOPERADOR")
+				.val(
+					"ig6bpA59BmxGAIwqUPcX5SRRxl3om/4vKuu6jFTBSvU5gKmGr1uJw8UtEY0a81/l4tjGNNUMcpmG+PsX7OxtsyCLvBW8GKph4eqm6YXuIuf0R1q0K2COWr/z19MQ7NzA3MVdrV8GBEHPAPQIEhQvRGwdz8mdqE2rRH5XbXmwxP3j5oOI9uBCGAXuPSHYkllaF5O1gq7B414uJl+OquLt01H1baQ6kTfhn3rn7sciysQSp/VaSl/Zhm3k9gUJQsvK");
+		    });
+</script>
+</head>
+<body>
+	<div class="container">
+		<br /> <br />
+		<label>
+			{\"BSFOPERADOR\":{\"ENTIDAD\":\"0166\",\"CENTRO\":\"0001\",\"TERMINAL\":\"12000105\",\"USERTCB\":\"DESA0003\",\"SESSIONID\":\"\",\"PASSTCB\":\"CAPI05\",\"TRANSPORT\":{ \"TIPOPER\":\"0\",\"IDINTERNOPE\":\"9315999\"}}}   
+		</label>
+		<br />
+		<form th:action="@{/wizardClienteRiesgo}" method="POST">
+			<input name="BSFOPERADOR" id='BSFOPERADOR' class="form-control" />
+			<br />
+			<button id="btn" type="submit" class="btn btn-success">Enviar BSFOPERADOR</button>
+		</form>
+	</div>
+</body>
+</html>

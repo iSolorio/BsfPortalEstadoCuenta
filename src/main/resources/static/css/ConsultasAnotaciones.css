@@ -1,0 +1,30 @@
+@CHARSET "ISO-8859-1";
+@media ( max-width : 1005px ) {
+	.contenedor-titulos{
+		background-color: #007CBA;
+	    margin: 0 1%;
+	    height: 100px;
+	    line-height: 4em;
+	}
+}
+@media (min-width:1006px){
+	.contenedor-titulos{
+		background-color: #007CBA;
+	    height: 50px;
+	    line-height: 4em;
+	}
+}
+
+.contenedor-titulos>div>label{
+	color:#FFF;
+	height:30px;
+}
+.container-info-detalles{
+	background-color:#E4E5E3;
+	height:80px;
+	padding:5px;
+}
+label.textAzul{
+	font-size:20px;
+	margin-bottom:25px;
+}

@@ -1,0 +1,39 @@
+@CHARSET "ISO-8859-1";
+
+.Titulo{
+	margin-left:3%;
+	color:#AC182C;
+	font-size:20px;
+}
+.ContenedorConfirmacion{
+	margin-right: 3%;
+	margin-left: 3%;
+	height:100%;
+	display:flex;
+	align-items: center;
+	background-color: #ebebeb !important;
+	justify-content: center;
+}
+.ContenedorMensaje{
+	color:#B40404;
+	border: solid #B40404;
+	padding: 3%;
+}
+.LabelCliente{
+	color:#FFF;
+}
+.DatosCliente{
+	font-weight:bold;
+	color: #FFF;
+}
+.TablaCuentas{
+	width:100%;
+}
+.TablaCuentas th{
+	background-color: #CCC;
+	text-align: center;
+	padding: 5px;
+}
+.TablaCuentas td{
+	background-color: #FFF;
+}

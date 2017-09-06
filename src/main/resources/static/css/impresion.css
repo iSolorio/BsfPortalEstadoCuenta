@@ -1,0 +1,324 @@
+.solo-impresion{display:none!important}@media print{blockquote,img,pre,tr{page-break-inside:avoid}*{background:0 0!important;box-shadow:none!important;color:#000!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}@page{margin:.5cm}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}.hide-on-print{display:none!important}.solo-impresion{display:block!important}.ocultar-en-impresion{display:none!important}.mostrar-en-impresion{display:inherit!important}table.mostrar-en-impresion{display:table!important}thead.mostrar-en-impresion{display:table-header-group!important}tbody.mostrar-en-impresion{display:table-row-group!important}tr.mostrar-en-impresion{display:table-row!important}td.mostrar-en-impresion,th.mostrar-en-impresion{display:table-cell!important}}@media not print{.mostrar-en-impresion{display:none!important}}
+
+@import url(../fonts/fontawesome/font-awesome.css);
+@import url(../fonts/jquery/font-jquery.css);
+
+
+
+	.impresion{
+		width: 20cm;
+		font-family: Courier New;
+		/*font-family: monospace;*/
+		font-size: 10pt;
+		/*border: thin solid black;*/
+	}
+	
+	h1,h2,h3 {
+		padding: 0;
+		margin: 0;
+	}
+	h2 {
+		font-size: 17pt;
+	}
+	h3 {
+		font-size: 12pt;
+	}
+	
+	.bold, .label-valor{
+		font-weight: bold;
+	}
+	.align-right{
+		text-align: right;
+	}
+	.margin-top-10 {
+  		margin-top: 10px; }
+
+	.float-right{
+		float: right;
+	}
+	
+	.fa {
+	  display: inline-block;
+	  font: normal normal normal 14px/1 FontAwesome;
+	  font-size: inherit;
+	  text-rendering: auto;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	  transform: translate(0, 0);
+	}
+
+	.impresion div[class*="grid_"]{
+		display:inline-block;
+		margin: .2cm 1cm .2cm 0;
+	}
+
+	/*
+	/////////////////////impresion de contadores/////////////////////////
+	*/
+	.impresion.contadores {
+		font-size: 10pt;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.totales-contadores {
+		border-top: thin solid black;
+		order: 1;
+	}
+	.totales-contadores label:nth-child(1),
+	.totales-contadores label:nth-child(2),
+	.totales-contadores label:nth-child(3),
+	.totales-contadores label:nth-child(4),
+	.totales-contadores label:nth-child(5)
+		{
+		display: inline-block;
+		padding: 3px;
+		margin: 0 1px;
+		font-size: 9pt;
+		text-align: right;
+	}
+	.totales-contadores label:nth-child(1) {
+		font-weight: bold;
+		width: 14.4% !important;
+	}
+	.totales-contadores label:nth-child(2) {
+		width: 20% !important;
+	}
+	.totales-contadores label:nth-child(3) {
+		width: 20.3% !important;
+	}
+	.totales-contadores label:nth-child(4) {
+		width: 19.3% !important;
+	}
+	.totales-contadores label:nth-child(5) {
+		width: 20.4% !important;
+	}
+	.contadores table, .posicion table{
+		width: 100%;
+	}
+	.contadores table tr:nth-child(2) th {
+		border-bottom: thin solid black;
+	}
+	.contadores table tr th:nth-child(1) {
+		border-bottom: thin solid black;
+	}
+	.contadores table tr th:nth-child(2) {
+		border-bottom: thin solid black;
+	}
+	.contadores table th,
+	.contadores table td,
+	.contadores table th,
+	.contadores table td {
+		font-size: 9pt;
+		padding: 3px;
+		vertical-align: bottom;
+	}
+	.contadores table td {
+		text-align: right;
+	}
+
+	/*
+	//////////////////Inicia impresion de traspasos//////////////////////////
+	*/
+
+	.impresion.traspasos h3{
+		font-size: 17pt;
+	}
+
+	.firma-origen,.firma-destino {
+	   border-top:thin solid black;
+	} 
+
+	 .traspasos .traspaso-parrafo,
+	 .traspasos .traspaso-monto{
+	 	font-size: 12pt;
+    }
+    .traspasos .traspaso-monto{
+    	font-weight: bold;
+    }
+
+    .traspasos .row-flex{
+    	display: flex;
+    }
+
+    .traspasos .row-flex [class*="grid_"]{
+    	margin-right: 1cm;
+    	margin-top:.5cm;
+    }
+
+    .traspasos .firmas{
+    	display: inline-block;
+    	margin-top:3cm;
+    }
+
+      .traspasos .firmas div{
+      	width: 6cm;
+      	margin:0 2cm;
+      	text-align: center;
+      	float:left;
+    }
+
+	/*
+	//////////////////Inicia impresion de notificaciones//////////////////////////
+	*/
+
+	.notificaciones span.notificacion-selec-destinatario {
+		font-size: 17pt;
+	}
+
+	.fa-warning:before,
+	.fa-exclamation-triangle:before {
+	  content: "\f071";
+	}
+
+	.notificacion-urgente-descripcion{
+	 display:inline-block;
+	}
+
+	.notificacion-urgente-descripcion i,
+	.notificacion-urgente-descripcion span{
+	float: left;}
+
+	/*
+	//////////////////Inicia impresion de posicion de cuenta//////////////////////////
+	*/
+
+	.posicion .tabla-posicion ul{
+		list-style: none;
+	}
+
+	.tabla-posicion th.ui-draggable{
+		border-bottom: 1px solid black;
+	}
+
+	.tabla-posicion .fila-total td{
+		padding: 0 0 0 .5cm;
+		font-weight: bold;
+	}	
+
+/*
+////////////////////Inicia impresion de historico de estados
+*/
+
+.historico .ui-accordion-header{
+	display: flex;
+}
+
+.historico .ui-accordion-header .codigo-estado{
+	margin-left: .5cm;
+}
+
+.codigo-estado-SOLICITADO:before {
+  content: "\f017";
+  font-family: 'FontAwesome';
+  margin-right: 5px; }
+  
+.codigo-estado-APROBADO:before {
+  content: "\f058";
+  font-family: 'FontAwesome';
+  margin-right: 5px; }
+  
+.codigo-estado-ACTIVO:before {
+  content: "\f013";
+  font-family: 'FontAwesome';
+  margin-right: 5px; }
+  
+.codigo-estado-SUSPENDIDO:before {
+  content: "\f05e";
+  font-family: 'FontAwesome';
+  margin-right: 5px; }
+  
+.codigo-estado-VENCIDO:before {
+  content: "\f273";
+  font-family: 'FontAwesome';
+  margin-right: 5px; }
+  
+ .historico h3.ui-accordion-header {
+    border-bottom:thin solid black;
+}
+div.accordion-imprimir-panel div.ui-accordion-content{
+	display: block !important;
+}
+
+
+/*
+////////////////////Inicia impresion de clasificacion de cuenta
+*/
+
+.clasificacion select{
+	display: none;
+}
+
+.clasificacion .ui-selectonemenu div:nth-child(1){
+	display:none;
+}
+
+.clasificacion .ui-autocomplete input{
+	display:none;
+}
+
+.clasificacion .ui-selectonemenu label, .clasificacion .ui-autocomplete span{
+	font-weight:bold;
+}
+
+/*
+//////////////////Inicia impresion de derivadas
+*/
+
+.derivada h2{
+	font-size: 12pt;
+	margin-top: .2cm;
+}
+
+.derivada th{
+	border-bottom: thin solid black;
+}
+
+.derivada table{
+	margin-top: .2cm;
+	font-size: 9pt;
+}
+
+/*
+//////////////////////Saldos netos traspasos
+*/
+
+.saldos-netos table th{
+		border-bottom: 1px solid black;
+	}
+
+.saldos-netos table th,
+.saldos-netos table td,
+.saldos-netos table th,
+.saldos-netos table td {
+	font-size: 9pt;
+	padding: 3px;
+	vertical-align: bottom;
+}
+.saldos-netos table td {
+	text-align: right;
+}
+
+/*
+//////////////////Inicia impresion de Consulta traspasos
+*/
+
+.consulta-traspasos button {
+	display: none;
+}
+
+.consulta-traspasos input {
+    border: 0;
+    font-family: Courier New;
+    /* font-family: monospace; */
+    font-size: 10pt;
+    /* border: thin solid black; */
+}
+
+.consulta-traspasos td {
+    text-align: center;
+}
+
+.consulta-traspasos table th {
+	border-bottom: thin solid black;
+}

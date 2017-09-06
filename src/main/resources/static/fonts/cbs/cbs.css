@@ -1,0 +1,51 @@
+@font-face {
+	font-family: 'cbs';
+	src:url('cbs.eot?z7qrl3');
+	src:url('cbs.eot?#iefixz7qrl3') format('embedded-opentype'),
+		url('cbs.woff?z7qrl3') format('woff'),
+		url('cbs.ttf?z7qrl3') format('truetype'),
+		url('cbs.svg?z7qrl3#cbs') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="cbs-"], [class*=" cbs-"] {
+	font-family: 'cbs';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.cbs-e001-busqueda:before {
+	content: "\e600";
+}
+.cbs-e002-acuerdo-rel:before {
+	content: "\e601";
+}
+.cbs-e003-herramientas:before {
+	content: "\e602";
+}
+.cbs-e004-tareas:before {
+	content: "\e603";
+}
+.cbs-e005-simular:before {
+	content: "\e604";
+}
+.cbs-e006-buscar-menu:before {
+	content: "\e605";
+}
+.cbs-e007-tareas-o:before {
+	content: "\e606";
+}
+.cbs-e008-deposito:before {
+	content: "\e607";
+}
+
+

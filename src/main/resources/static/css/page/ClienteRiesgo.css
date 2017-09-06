@@ -1,0 +1,70 @@
+.textAzul {
+	color: #06ace3;
+}
+
+.textRojo {
+	color: #dc0318;
+	/* 	font: menu; */
+	/* 	font-size: 12pt; */
+}
+
+input.disabled {
+	opacity: 0.1;
+}
+
+.divGris1 {
+	background-color: #ebebeb !important;
+}
+
+.divGris2 {
+	background-color: #dadada !important;
+}
+
+.divBlanco {
+	background-color: #ffffff !important;
+}
+
+.divAzul {
+	background-color: #1383d5 !important;
+}
+
+.padding2 {
+	padding: 0.5cm 1cm !important;
+}
+
+.txt-titulos {
+	color: #0499ca;
+	font: menu;
+	font-size: 18pt;
+}
+
+.botonimagen {
+	background-color: transparent;
+	border: none;
+	background-repeat: no-repeat;
+	height: 50px;
+	width: 50px;
+	background-position: center;
+	border: none;
+}
+.ContenedorMensaje{
+	color:#B40404;
+	border: solid #B40404;
+	padding: 3%;
+}
+
+.left_div 
+{
+	    position: absolute;
+	    left: 1px;
+	    width: 300px;
+	    padding: 10px;
+}
+
+.right_div 
+{
+	    position: absolute;
+	    right: 100px;
+	    width: 300px;
+	    padding: 10px;
+}

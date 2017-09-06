@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+	<link th:href="@{/css/estilos.css}" rel="stylesheet" />
+</head>
+<body>
+	<div th:fragment="breadcum">
+
+		<div class="contenedor">
+			<div class="contenedor-form">
+				<div class="titulo centrar-objeto btn-inline-set">
+					<button id="breadcum" name="breadcum"
+							class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only btnMenuGlobal">
+						<span class="ui-button-icon-left ui-icon ui-c ui-icon-arrow-1-w"></span>
+						<span class="ui-button-text ui-c">ui-button</span>
+					</button>
+					<h1>
+
+						<label th:if="${TipOperacion} eq 1" class="titulo h1" id="lblTitulo">Alta  de  </label>
+						<label th:if="${TipOperacion} eq 0" class="titulo h1" id="">Modificaci&oacute;n  de  </label>
+						<label class="textAzul" th:text="${titulo}" style="font-size: 36px;"></label>
+						<label id="identificacionPM" class="titulo h2" th:text="${identificacionPM}"></label>
+
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
