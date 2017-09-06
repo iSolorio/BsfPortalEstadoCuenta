@@ -168,7 +168,7 @@ public class RequestAltaDTO {
 	private String domicilio;
 	@Getter
 	@Setter
-	private String rfc;
+	private String RFC;
 	@Getter
 	@Setter
 	private String dispEnPeriodo;
@@ -209,8 +209,6 @@ public class RequestAltaDTO {
 	@Getter
 	@Setter
 	private String terminal;
-	@Getter
-	@Setter
-	private String nombre;
+	
 	
 }

@@ -224,7 +224,7 @@ public class WsService {
 				request.setMONTO_LINEA(responseCredito.getDatosCredito().get(i).getMonto_LINEA());
 				request.setMontoDeAbonos(responseCredito.getDatosCredito().get(i).getMontoDeAbonos());
 				request.setNOMBRETO(responseCredito.getDatosCredito().get(i).getNombreto());
-				request.setNombre(responseCredito.getDatosCredito().get(i).getNombreto());
+				
 				request.setNumAbonos(responseCredito.getDatosCredito().get(i).getNumAbonos());
 				request.setNumSecAc(req.getCredito());
 				request.setPAGO_CAPITAL(responseCredito.getDatosCredito().get(i).getPago_CAPITAL());
@@ -237,8 +237,7 @@ public class WsService {
 				request.setPI_REVI_DE_TASA(responseCredito.getDatosCredito().get(i).getPi_REVI_DE_TASA());
 				request.setPIV_FECHA_FINAL(responseCredito.getDatosCredito().get(i).getPiv_FECHA_FINAL());
 				request.setREVI_DE_TASA(responseCredito.getDatosCredito().get(i).getRevi_DE_TASA());
-				request.setRfc(req.getRfc());/*hay que cambiarlo por el rfc que esta en el front*/
-				System.out.println(request.getRfc());
+				request.setRFC(req.getRfc());
 				request.setSALDO(responseCredito.getDatosCredito().get(i).getSaldo());
 				request.setSALDO_FINAL(responseCredito.getDatosCredito().get(i).getSaldo_FINAL());
 				request.setSucursal(responseCredito.getDatosCredito().get(i).getSucursal());
